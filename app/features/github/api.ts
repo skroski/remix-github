@@ -1,6 +1,6 @@
 import invariant from "tiny-invariant";
 
-export const getGithubUser = async (username?: string) => {
+export const getGitHubUser = async (username?: string) => {
 
     invariant(username, "Por favor insira um usuario valido na url")
 

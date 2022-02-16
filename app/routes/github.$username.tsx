@@ -2,7 +2,7 @@ import { LoaderFunction, useLoaderData } from "remix";
 import { LoaderData } from "~/features/github/types";
 import { createStitches, styled } from "@stitches/react";
 import { violet, slate, red, green, yellow, orange } from "@radix-ui/colors";
-import { getGithubUser } from "~/features/github/api";
+import { getGitHubUser } from "~/features/github/api";
 
 const { css } = createStitches({
   theme: {
@@ -199,7 +199,7 @@ const Button = styled("button", {
 
 export const loader: LoaderFunction = async ({ params }) => {
   return {
-    user: await getGithubUser(params.username),
+    user: await getGitHubUser(params.username),
   };
 };
 
