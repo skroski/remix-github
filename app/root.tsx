@@ -1,5 +1,6 @@
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
@@ -7,6 +8,11 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
+import styles from "./tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+];
 
 export const meta: MetaFunction = () => {
   return { title: "Github Remix Test" };
@@ -15,13 +21,14 @@ export const meta: MetaFunction = () => {
 export default function App() {
   return (
     <html lang="en">
-      <head>
+      <head className="h-full">
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+       
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="h-full">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
